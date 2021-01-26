@@ -1,0 +1,60 @@
+﻿@using FilmSitesiDeneme.Models
+@model FilmSitesiDeneme.Models.ViewModel
+@{
+    ViewBag.Title = "Yorumlar";
+    Layout = "~/Views/AdminShared.cshtml";
+}
+<table id="tbl" width="100%" border="1">
+    <thead>
+        <tr class="text-center bg-dark">
+            <th><text class="text-warning">AD</text></th>
+            <th><text class="text-warning">MAIL</text></th>
+            <th><text class="text-warning">YORUM</text></th>
+            <th><text class="text-warning">TARIH</text></th>
+            <th><text class="text-warning">SİL</text></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mstr in Model.AvengersYorums)
+        {
+            <tr>
+                <td class="text-center">@mstr.Yorum_AD</td>
+                <td class="text-center">@mstr.Yorum_MAIL</td>
+                <td class="text-center">@mstr.Yorum_YORUM</td>
+                <td class="text-center">@mstr.Yorum_TARIH</td>
+                <td class="text-center"><a style="text-decoration:none;" class="btn-danger p-2" href="/Admin/YorumSil/@mstr.Yorum_ID">Sil</a></td>
+            </tr>
+        }
+        @foreach (var mstr in Model.Avengers2Yorums)
+        {
+            <tr>
+                <td class="text-center">@mstr.Yorum_AD</td>
+                <td class="text-center">@mstr.Yorum_MAIL</td>
+                <td class="text-center">@mstr.Yorum_YORUM</td>
+                <td class="text-center">@mstr.Yorum_TARIH</td>
+                <td class="text-center"><a style="text-decoration:none;" class="btn-danger p-2" href="/Admin/YorumSil2/@mstr.Yorum_ID">Sil</a></td>
+            </tr>
+        }
+        @foreach (var mstr in Model.Avengers3Yorums)
+        {
+            <tr>
+                <td class="text-center">@mstr.Yorum_AD</td>
+                <td class="text-center">@mstr.Yorum_MAIL</td>
+                <td class="text-center">@mstr.Yorum_YORUM</td>
+                <td class="text-center">@mstr.Yorum_TARIH</td>
+                <td class="text-center"><a style="text-decoration:none;" class="btn-danger p-2" href="/Admin/YorumSil3/@mstr.Yorum_ID">Sil</a></td>
+            </tr>
+        }
+        @foreach (var mstr in Model.Avengers4Yorums)
+        {
+            <tr>
+                <td class="text-center">@mstr.Yorum_AD</td>
+                <td class="text-center">@mstr.Yorum_MAIL</td>
+                <td class="text-center">@mstr.Yorum_YORUM</td>
+                <td class="text-center">@mstr.Yorum_TARIH</td>
+                <td class="text-center"><a style="text-decoration:none;" class="btn-danger p-2" href="/Admin/YorumSil4/@mstr.Yorum_ID">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

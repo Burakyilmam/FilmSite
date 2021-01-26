@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "İletisim";
+    Layout = "~/Views/Shared.cshtml";
+}
+<style>
+    input[type=text]::placeholder, textarea::placeholder {
+        color: gray;
+    }
+    #card .fa {
+        color: white;
+        background-color:transparent;
+    }
+
+        #card .fa:hover {
+            opacity: 0.7;
+        }
+        #gizle{
+            display:none;
+        }
+</style>
+    <div class="container-fluid col-10">
+        <div>
+            @RenderBody()
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h3 class="text-center mt-3">Ekibimiz</h3>
+            </div>
+            <div style="background-color:green" class="card mt-2 col-sm-3 mr-2">
+                <div class="pt-3 pb-2 card-img">
+                    <img src="http://www.tarkem.com/wp-content/uploads/2018/11/si2.jpg" style="border-radius: 50%;border:5px solid black;margin-left:15%" width="70%" alt="Alternate Text" />
+                </div>
+                <div class="card-text pb-2 pt-2 text-white text-center">
+                    <text class="font-weight-bold">Burak Yılmam</text>
+                    <br />
+                    <text style="font-style:normal">Backend Developer</text>
+                </div>
+                <div id="card" class="card-text pb-3 pt-1 text-center">
+                    <a href="https://www.facebook.com"><i class="fa mt-1 mr-2 fa-facebook"></i></a>
+                    <a href="https://www.twitter.com"><i class="fa mr-2 fa-twitter"></i></a>
+                    <a href="https://www.instagram.com"><i class="fa mr-2 fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fa mr-2 fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div style="background-color:#040458" class="card mt-2 col-sm-3 mr-2">
+                <div class="pt-3 pb-2 card-img">
+                    <img src="http://www.tarkem.com/wp-content/uploads/2018/11/so.jpeg" style="border-radius: 50%;border:5px solid black;margin-left:15%" width="70%" alt="Alternate Text" />
+                </div>
+                <div class="card-text pb-2 pt-2 text-white text-center">
+                    <text class="font-weight-bold">Selma Yılmam</text>
+                    <br />
+                    <text style="font-style:normal">Frontend Developer</text>
+                </div>
+                <div id="card" class="card-text pb-2 pt-1 text-center">
+                    <a href="https://www.facebook.com"><i class="fa mt-1 mr-2 fa-facebook"></i></a>
+                    <a href="https://www.twitter.com"><i class="fa mr-2 fa-twitter"></i></a>
+                    <a href="https://www.instagram.com"><i class="fa mr-2 fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fa mr-2 fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div style="background-color:#065b60" class="card mt-2 col-sm-3 mr-2">
+                <div class="pt-3 pb-2 card-img">
+                    <img src="http://www.tarkem.com/wp-content/uploads/2018/11/hh1.jpg" style="border-radius: 50%;border:5px solid black;margin-left:15%" width="70%" alt="Alternate Text" />
+                </div>
+                <div class="card-text pb-2 pt-2 text-white text-center">
+                    <text class="font-weight-bold">İsmail Yılmam</text>
+                    <br />
+                    <text style="font-style:normal">Database Developer</text>
+                </div>
+                <div id="card" class="card-text pb-3 pt-1 text-center">
+                    <a href="https://www.facebook.com"><i class="fa mt-1 mr-2 fa-facebook"></i></a>
+                    <a href="https://www.twitter.com"><i class="fa mr-2 fa-twitter"></i></a>
+                    <a href="https://www.instagram.com"><i class="fa mr-2 fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fa mr-2 fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div style="background-color:#4b1186" class="card mt-2 col-sm-3 mr-2">
+                <div class="pt-3 pb-2 card-img">
+                    <img src="http://www.tarkem.com/wp-content/uploads/2018/11/si2.jpg" style="border-radius: 50%;border:5px solid black;margin-left:15%" width="70%" alt="Alternate Text" />
+                </div>
+                <div class="card-text pb-2 pt-2 text-white text-center">
+                    <text class="font-weight-bold">Burak Yılmam</text>
+                    <br />
+                    <text style="font-style:normal">Backend Developer</text>
+                </div>
+                <div id="card" class="card-text pb-3 pt-1 text-center">
+                    <a href="https://www.facebook.com"><i class="fa mt-1 mr-2 fa-facebook"></i></a>
+                    <a href="https://www.twitter.com"><i class="fa mr-2 fa-twitter"></i></a>
+                    <a href="https://www.instagram.com"><i class="fa mr-2 fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fa mr-2 fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div style="background-color:#8d0909" class="card mt-2 col-sm-3 mr-2">
+                <div class="pt-3 pb-2 card-img">
+                    <img src="http://www.tarkem.com/wp-content/uploads/2018/11/so.jpeg" style="border-radius: 50%;border:5px solid black;margin-left:15%" width="70%" alt="Alternate Text" />
+                </div>
+                <div class="card-text pb-2 pt-2 text-white text-center">
+                    <text class="font-weight-bold">Selma Yılmam</text>
+                    <br />
+                    <text style="font-style:normal">Frontend Developer</text>
+                </div>
+                <div id="card" class="card-text pb-2 pt-1 text-center">
+                    <a href="https://www.facebook.com"><i class="fa mt-1 mr-2 fa-facebook"></i></a>
+                    <a href="https://www.twitter.com"><i class="fa mr-2 fa-twitter"></i></a>
+                    <a href="https://www.instagram.com"><i class="fa mr-2 fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fa mr-2 fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div style="background-color:#987134" class="card mt-2 col-sm-3 mr-2">
+                <div class="pt-3 pb-2 card-img">
+                    <img src="http://www.tarkem.com/wp-content/uploads/2018/11/hh1.jpg" style="border-radius: 50%;border:5px solid black;margin-left:15%" width="70%" alt="Alternate Text" />
+                </div>
+                <div class="card-text pb-2 pt-2 text-white text-center">
+                    <text class="font-weight-bold">İsmail Yılmam</text>
+                    <br />
+                    <text style="font-style:normal">Database Developer</text>
+                </div>
+                <div id="card" class="card-text pb-3 pt-1 text-center">
+                    <a href="https://www.facebook.com"><i class="fa mt-1 mr-2 fa-facebook"></i></a>
+                    <a href="https://www.twitter.com"><i class="fa mr-2 fa-twitter"></i></a>
+                    <a href="https://www.instagram.com"><i class="fa mr-2 fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fa mr-2 fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+

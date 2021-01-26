@@ -1,0 +1,35 @@
+﻿@using FilmSitesiDeneme.Models
+@model List<Filmler>
+@{
+    ViewBag.Title = "Filmler";
+    Layout = "~/Views/AdminShared.cshtml";
+}
+
+    <table id="tbl" width="100%" border="1">
+        <thead>
+            <tr class="text-center bg-dark">
+                <th><text class="text-warning">Resim</text></th>
+                <th><text class="text-warning">Ad</text></th>
+                <th><text class="text-warning">Tür</text></th>
+                <th><text class="text-warning">IDMb Puan</text></th>
+                <th><text class="text-warning">Dil Seçeneği</text></th>
+                <th><text class="text-warning">Sil </text></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var mstr in Model)
+            {
+            <tr>
+                <td style="width:15%" class="text-center"><img width="100%;" src="@mstr.Film_Resim" /></td>
+                <td class="text-center">@mstr.Film_AD</td>
+                <td class="text-center">@mstr.Film_Tür</td>
+                <td class="text-center">@mstr.Film_Puan</td>
+                <td class="text-center">@mstr.Film_Dil</td>
+                <td class="text-center"><a style="text-decoration:none;" class="btn-danger p-2" href="/Admin/FilmSil/@mstr.Film_ID">Sil</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <div class="row mt-4 mb-4 justify-content-center">
+        <div class="col-1"><a href="/Admin/YeniFilm/"><button style="width:200px;" class="btn-info text-center ml-4">Yeni Film Ekle</button></a></div>
+    </div>

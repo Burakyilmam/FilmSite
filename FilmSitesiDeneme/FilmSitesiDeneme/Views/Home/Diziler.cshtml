@@ -1,0 +1,197 @@
+﻿@using FilmSitesiDeneme.Models
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Diziler>
+@{
+    ViewBag.Title = "Diziler";
+    Layout = "~/Views/Shared.cshtml";
+}
+
+<link href="~/flickity.css" rel="stylesheet" />
+<script src="~/flickity.pkgd.min.js"></script>
+<style>
+    .resimYazisi {
+        font: bold 13px Sans-Serif;
+        position: absolute;
+        color: #000;
+        text-align: center;
+        text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
+        -webkit-transform: rotate(-40deg);
+        -moz-transform: rotate(-40deg);
+        -ms-transform: rotate(-40deg);
+        -o-transform: rotate(-40deg);
+        width: 160px;
+        top: 5px;
+        left: -52px;
+        padding: 7px 0;
+        z-index: 90;
+    }
+
+    .Dublaj {
+        background-color: #BFDC7A;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+        background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+        background-image: -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+        background-image: -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+        background-image: -o-linear-gradient(top, #BFDC7A, #8EBF45);
+    }
+
+    .Altyazı {
+        background-color: #06cbde;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#06cbde), to(#08e3f8));
+        background-image: -webkit-linear-gradient(top, #06cbde, #08e3f8);
+        background-image: -moz-linear-gradient(top, #06cbde, #08e3f8);
+        background-image: -ms-linear-gradient(top, #06cbde, #08e3f8);
+        background-image: -o-linear-gradient(top, #06cbde, #08e3f8);
+    }
+
+    .Orjinal {
+        background-color: #ffa63a;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(darkorange), to(#ffa63a));
+        background-image: -webkit-linear-gradient(top, darkorange, #ffa63a);
+        background-image: -moz-linear-gradient(top, darkorange, #ffa63a);
+        background-image: -ms-linear-gradient(top, darkorange, #ffa63a);
+        background-image: -o-linear-gradient(top, darkorange, #ffa63a);
+    }
+
+    .Fragman {
+        background-color: #e1e102;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(yellow), to(#e1e102));
+        background-image: -webkit-linear-gradient(top, yellow, #e1e102);
+        background-image: -moz-linear-gradient(top, yellow, #e1e102);
+        background-image: -ms-linear-gradient(top, yellow, #e1e102);
+        background-image: -o-linear-gradient(top, yellow, #e1e102);
+    }
+
+    .Karısık {
+        width: 160px;
+        top: 8px;
+        left: -50px;
+        background-color: #989898;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(silver), to(#989898));
+        background-image: -webkit-linear-gradient(top, silver, #989898);
+        background-image: -moz-linear-gradient(top, silver, #989898);
+        background-image: -ms-linear-gradient(top, silver, #989898);
+        background-image: -o-linear-gradient(top, silver, #989898);
+    }
+
+    .imdb {
+        font: bold 14px Sans-Serif;
+        position: absolute;
+        color: black;
+        text-align: center;
+        text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        top: 5%;
+        left: 75%;
+        padding: 8px 0;
+        padding-left: 1px;
+        z-index: 90;
+        text-align: center;
+    }
+
+    .carousel-cell {
+        width: 20%;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    li {
+        float: left;
+        border-right: 1px solid white;
+    }
+
+        li:last-child {
+            border-right: none;
+        }
+
+        li a {
+            display: block;
+            color: Black;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+            li a:hover:not(.active) {
+                background-color: #4CAF50;
+                text-decoration: none;
+            }
+
+    .active {
+        background-color: #4CAF50;
+    }
+</style>
+<div style="display:none;" id="arama">
+    @using (Html.BeginForm("Diziler", "Home", FormMethod.Get))
+    {
+        <p>
+            @*@Html.TextBox("p")*@
+            <input type="text" style="width:97%;border-right:none;border:2px solid darkorange" name="p" placeholder="Dizi Adını Giriniz." />
+            <input style="margin-left:-5px;border-left:none;border-color:darkorange;background-color:darkorange;color:white;" type="submit" value="Ara" />
+        </p>
+    }
+</div>
+<div class="carousel pt-2 pb-2" data-flickity='{ "autoPlay": true }'>
+    <div class="carousel-cell">
+        <img width="100%" height="100%" src="https://i.pinimg.com/236x/d2/0f/ab/d20fab81bece5f1c2eaf35392ad28114.jpg" alt="Alternate Text" />
+    </div>
+    <div class="carousel-cell">
+        <img width="100%" height="100%" src="https://i.pinimg.com/236x/d2/0f/ab/d20fab81bece5f1c2eaf35392ad28114.jpg" alt="Alternate Text" />
+    </div>
+    <div class="carousel-cell">
+        <img width="100%" height="100%" src="https://i.pinimg.com/236x/d2/0f/ab/d20fab81bece5f1c2eaf35392ad28114.jpg" alt="Alternate Text" />
+    </div>
+    <div class="carousel-cell">
+        <img width="100%" height="100%" src="https://i.pinimg.com/236x/d2/0f/ab/d20fab81bece5f1c2eaf35392ad28114.jpg" alt="Alternate Text" />
+    </div>
+    <div class="carousel-cell">
+        <img width="100%" height="100%" src="https://i.pinimg.com/236x/d2/0f/ab/d20fab81bece5f1c2eaf35392ad28114.jpg" alt="Alternate Text" />
+    </div>
+    <div class="carousel-cell">
+        <img width="100%" height="100%" src="https://i.pinimg.com/236x/d2/0f/ab/d20fab81bece5f1c2eaf35392ad28114.jpg" alt="Alternate Text" />
+    </div>
+    <div class="carousel-cell">
+        <img width="100%" height="100%" src="https://i.pinimg.com/236x/d2/0f/ab/d20fab81bece5f1c2eaf35392ad28114.jpg" alt="Alternate Text" />
+    </div>
+    <div class="carousel-cell">
+        <img width="100%" height="100%" src="https://i.pinimg.com/236x/d2/0f/ab/d20fab81bece5f1c2eaf35392ad28114.jpg" alt="Alternate Text" />
+    </div>
+    <div class="carousel-cell">
+        <img width="100%" height="100%" src="https://i.pinimg.com/236x/d2/0f/ab/d20fab81bece5f1c2eaf35392ad28114.jpg" alt="Alternate Text" />
+    </div>
+    <div class="carousel-cell">
+        <img width="100%" height="100%" src="https://i.pinimg.com/236x/d2/0f/ab/d20fab81bece5f1c2eaf35392ad28114.jpg" alt="Alternate Text" />
+    </div>
+</div>
+<div style="margin-left:150px;">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="col-7 col-lg-2 col-md-3 text-center mr-3 mt-3 mb-3 pt-3" style="float:left;height:350px;background-color:rgba(128, 128, 128, 0.3);position:relative;overflow:hidden;">
+                <div class="card">
+
+                    <p class="resimYazisi @item.Dizi_Dil"><text>@item.Dizi_Kurdele</text></p>
+                    <p class="imdb @item.Dizi_Dil"><text>IMDb <br />@item.Dizi_Puan</text></p>
+                    <a href="@item.Dizi_Referans"><img width="100%" height="315px" src="@item.Dizi_Resim" /></a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div class="float-left col-12">
+    <div class="row justify-content-center">
+        @Html.PagedListPager((IPagedList)Model, sayfa1 => Url.Action("Diziler", new { sayfa1 }))
+    </div>
+</div>

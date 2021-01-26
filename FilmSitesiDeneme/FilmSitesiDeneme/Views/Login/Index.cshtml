@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Giriş Yap";
+    Layout = "~/Views/Shared.cshtml";
+}
+<style>
+    input[type=text]::placeholder {
+        color: gray;
+    }
+
+    span {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+    }
+    #gizle{
+        display:none;
+    }
+</style>
+    <form class="form-group" id="form" method="post">
+        <div style="width:400px;margin-top:125px;margin-bottom:125px; border-radius:10px;box-shadow: 10px 10px 5px grey;" class="container bg-info">
+            <div class="row pt-5">
+                <div class="col mt-4">
+                    <i class="fa fa-user" style="position:absolute;top:5px;left:22px;"></i><input type="text" style="width:100%;border-radius:5px;border:1px solid #7a7a7a;background-color:#f8f9fa;padding-left:25px;padding-right:10px;" placeholder="Kullanıcı Adınız" name="Yönetici_AD" value="" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mt-4">
+                    <i class="fa fa-lock" style="position:absolute;top:6px;left:22px;"></i><input id="sifre" type="password" style="width:100%;border-radius:5px;border:1px solid #7a7a7a;background-color:#f8f9fa;padding-left:25px;padding-right:24px;" placeholder="Şifreniz" name="Yönetici_ŞİFRE" value="" /><span toggle="#sifre" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3 mt-4 mb-4">
+                    <input class="btn-success text-center" style="border-radius: 5px;border: 1px solid #7a7a7a;" type="submit" value="Giriş Yap" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        $(".toggle-password").click(function () {
+
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    </script>

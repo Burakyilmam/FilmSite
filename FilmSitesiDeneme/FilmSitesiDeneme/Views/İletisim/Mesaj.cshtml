@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Mesaj";
+    Layout = "~/Views/İletisim/İletisim.cshtml";
+}
+
+<link href="~/bootstrap-4.5.3-dist/css/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="~/bootstrap-4.5.3-dist/js/jQuery.js"></script>
+<script src="~/bootstrap-4.5.3-dist/js/bootstrap.js"></script>
+<script src="~/flickity.pkgd.min.js"></script>
+<link href="~/flickity.css" rel="stylesheet" />
+<div style="margin-bottom:50px;background-color:rgba(128, 128, 128, 0.15)" class="row">
+    <div class="col-sm mt-sm-5 text-black">
+        <div class="row mt-4">
+            <div class="col text-center"><i style="font-size:20px;color:#ff6a00" class="fa fa-phone mr-2 font-weight-bold mb-1">&nbsp;&nbsp;<text style="color:black;">Telefon Numaramız</text></i><br />(224) 245 48 03</div>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center"><i style="font-size:20px;color:#ff6a00" class="fa fa-envelope mr-2 font-weight-bold mb-1">&nbsp;&nbsp;<text style="color:black;">E-Posta Adresimiz</text></i><br />B1Rfilm@info.com</div>
+        </div>
+        <div class="row mt-4 mb-sm-0">
+            <div class="col text-center"><i style="font-size:20px;color:#ff6a00" class="fa fa-map-marker mr-2 font-weight-bold mb-1">&nbsp;&nbsp;<text style="color:black;">Adresimiz</text></i><br />DPÜ Evliya Çelebi Yerleşkesi Merkez/Kütahya</div>
+        </div>
+        <div class="row justify-content-center mt-2 mb-2"><button onclick="myFunction()" class="btn-primary">Haritayı Göster</button></div>
+        <div id="myDIV" style="display:none;" class="row"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.5039815720297!2d29.896454314998092!3d39.480533079484886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c9486d6b77991d%3A0xa51a8d9c8451df0e!2sK%C3%BCtahya%20Dumlup%C4%B1nar%20%C3%9Cniversitesi%20M%C3%BChendislik%20Fak%C3%BCltesi!5e0!3m2!1str!2str!4v1606860080769!5m2!1str!2str" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+    </div>
+    <form method="post" class="form-group">
+        <div style="border-left:2px solid white;" class="col-sm">
+            <div style="height:2px;" id="display" class="row bg-white"><div class="col-12">&nbsp;</div></div>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-5"><input placeholder="Adınız" style="width:100%;height:45px;background-color:#f8f9fa;border-radius:5px;border:1px solid #7a7a7a;outline:#ffffff;padding-left:15px;" type="text" name="Mesaj_AD" value="" /></div>
+                <div class="col-5"><input placeholder="Soyadınız" style="width:100%;height:45px;background-color:#f8f9fa;border-radius:5px;border:1px solid #7a7a7a;outline:#ffffff;padding-left:15px;" type="text" name="Mesaj_Soyad" value="" /></div>
+            </div>
+            <div class="col"><input type="date" id="datePicker" style="display:none;" name="Mesaj_Tarih" value="" /></div>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-10"><input placeholder="Mail Adresiniz" style="width:100%;height:45px;background-color:#f8f9fa;border-radius:5px;border:1px solid #7a7a7a;outline:#ffffff;padding-left:15px;" type="text" name="Mesaj_Mail" value="" /></div>
+            </div>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-10"><textarea name="Mesaj_Mesaj" placeholder="Mesajınız" style="width:100%;height:150px;background-color:#f8f9fa;border-radius:5px;border:1px solid #7a7a7a;resize:none;outline:#ffffff;padding-left:15px;"></textarea></div>
+            </div>
+            <div class="row mt-2 mb-3 justify-content-center"><div class="col-4"><input class="btn-success" style="width:100%;outline:#ffffff;border-radius:5px;border:none;" type="submit" value="Gönder" /></div></div>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('datePicker').valueAsDate = new Date();
+</script>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+

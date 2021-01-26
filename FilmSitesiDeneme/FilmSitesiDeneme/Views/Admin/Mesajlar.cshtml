@@ -1,0 +1,33 @@
+﻿@using FilmSitesiDeneme.Models
+@model List <Mesaj>
+@{
+    ViewBag.Title = "Filmler";
+    Layout = "~/Views/AdminShared.cshtml";
+}
+
+<table id="tbl" width="100%" border="1">
+    <thead>
+        <tr class="text-center bg-dark">
+            <th><text class="text-warning">AD</text></th>
+            <th><text class="text-warning">SOYAD</text></th>
+            <th><text class="text-warning">MAIL</text></th>
+            <th><text class="text-warning">MESAJ</text></th>
+            <th><text class="text-warning">TARİH</text></th>
+            <th><text class="text-warning">SİL</text></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mstr in Model)
+        {
+        <tr>
+            <td style="width:15%" class="text-center">@mstr.Mesaj_AD</td>
+            <td class="text-center">@mstr.Mesaj_Soyad</td>
+            <td class="text-center">@mstr.Mesaj_Mail</td>
+            <td class="text-center">@mstr.Mesaj_Mesaj</td>
+            <td class="text-center">@mstr.Mesaj_Tarih</td>
+            <td class="text-center"><a style="text-decoration:none;" class="btn-danger p-2" href="/Admin/MesajSil/@mstr.Mesaj_ID">Sil</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+

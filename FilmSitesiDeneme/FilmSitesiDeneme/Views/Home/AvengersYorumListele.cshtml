@@ -1,0 +1,15 @@
+﻿@using FilmSitesiDeneme.Models
+@model List<AvengersYorum>
+@foreach (var yrm in Model)
+{
+    <div class="row bg-dark text-white" style="border-top:2px solid white;">
+        <div class="col mt-2 ml-2 font-weight-bold">@yrm.Yorum_AD</div>
+        <div class="col mt-2 mr-2 font-weight-bold"><text class="float-right">@yrm.Yorum_TARIH</text></div>
+    </div>
+    <div class="row bg-dark text-white">
+        <div class="col mt-2 ml-2 mb-1">@yrm.Yorum_YORUM</div>
+    </div>
+}
+
+
+

@@ -1,0 +1,202 @@
+﻿@using FilmSitesiDeneme.Models
+@model List<Avengers4Yorum>
+@{
+    ViewBag.Title = "Avengers4Yorum";
+    Layout = "~/Views/Shared.cshtml";
+}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="~/Oyuncular.js"></script>
+<link href="~/Oyuncular.css" rel="stylesheet" />
+<style>
+    .resimYazisi {
+        font: bold 13px Sans-Serif;
+        position: absolute;
+        color: #000;
+        text-align: center;
+        text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
+        -webkit-transform: rotate(-40deg);
+        -moz-transform: rotate(-40deg);
+        -ms-transform: rotate(-40deg);
+        -o-transform: rotate(-40deg);
+        width: 140px;
+        top: 10px;
+        left: -42px;
+        padding: 7px 0;
+        z-index: 90;
+    }
+
+    .resimYazisiOyuncu {
+        background-color: #ffa63a;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(darkorange), to(#ffa63a));
+        background-image: -webkit-linear-gradient(top, darkorange, #ffa63a);
+        background-image: -moz-linear-gradient(top, darkorange, #ffa63a);
+        background-image: -ms-linear-gradient(top, darkorange, #ffa63a);
+        background-image: -o-linear-gradient(top, darkorange, #ffa63a);
+    }
+
+    .resimYazisiYönetmen {
+        background-color: #e1e102;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(yellow), to(#e1e102));
+        background-image: -webkit-linear-gradient(top, yellow, #e1e102);
+        background-image: -moz-linear-gradient(top, yellow, #e1e102);
+        background-image: -ms-linear-gradient(top, yellow, #e1e102);
+        background-image: -o-linear-gradient(top, yellow, #e1e102);
+    }
+</style>
+<div class="bg-dark">
+    <div class="row">
+        <div style="background-color:#121212;" class="col-lg-1 col-md-2 col-3 text-center pt-3 pb-3">
+            <a class="text-white" style="font-size:17px;" href="https://www.google.com/search?client=opera&q=avengers&sourceid=opera&ie=UTF-8&oe=UTF-8"><i class="fa fa-google pr-4 pl-4"></i></a>
+        </div>
+        <div style="background-color:black;" class="col text-white pt-3 pb-3">
+            <text class="font-weight-bold">Avengers</text>
+        </div>
+    </div>
+    <div class="row bg-light justify-content-center text-center mb-2">
+        <div style="border-radius:8px;" class="col-2 btn-danger mr-2 mt-2 pt-1 pb-1"><a class="text-white" style="text-decoration:none;background-color:transparent;border:none;" href="">Fragman</a></div>
+        <div style="border-radius:8px;" class="col-2 btn-info mr-2 mt-2 pt-1 pb-1"><a class="text-white" style="text-decoration:none;" href="">Link 1</a></div>
+        <div style="border-radius:8px;" class="col-2 btn-success mr-2 mt-2 pt-1 pb-1"><a style="text-decoration:none;" class="text-white" href="">Link 2</astyle="text-decoration:none;"></div>
+        <div style="border-radius:8px;" class="col-2 btn-warning mt-2 pt-1 pb-1"><a class="text-white" style="text-decoration:none;" href="">Link 3</a></div>
+    </div>
+</div>
+<div class="bg-dark" style="width:100%;height:500px;">
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zolVdBVREiM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="">
+    <div class="row">
+        <div style="background-color:#121212;" class="col-lg-1 col-md-2 col-3 text-center pt-3 pb-3">
+            <i style="font-size:17px;" class="fa fa-info-circle pr-4 pl-4 text-white"></i>
+        </div>
+        <div style="background-color:black;" class="col text-white pt-3 pb-3">
+            <text class="font-weight-bold">Film Bilgileri</text>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="bg-light col-5 col-lg-3 col-md-4 ml-2 pt-2 pb-2"><img width="100%" height="100%" src="https://my-test-11.slatic.net/p/06869b53bd6a67ef5b4b7783643b3577.jpg" /></div>
+    <div class="col bg-light mt-3">
+        <div class="row mt-2">Dragonheart Vengeance izle. Ailesi öldürülen Lukas, intikam için bir paralı asker ve görkemli bir ejderha bulur.</div>
+        <div class="row mt-2"><renk class="text-warning mr-1">Yıl - Ülke : </renk> ABD - 2020</div>
+        <div class="row mt-2"><renk class="text-warning mr-1">Tür : </renk> Fantastik , Bilim Kurgu</div>
+        <div class="row mt-2"><renk class="text-warning mr-1">IMDb : </renk> 7.4</div>
+        <div class="row mt-2"><renk class="text-warning mr-1">IMDb Sayfası : </renk> www.imdb.com/title/tt9711106</div>
+    </div>
+</div>
+<div class="">
+    <div class="row">
+        <div style="background-color:#121212;" class="col-lg-1 col-md-2 col-3 text-center pt-3 pb-3">
+            <i onclick="myFunction()" style="font-size:17px;" class="fa fa-info-circle pr-4 pl-4 text-white"></i>
+        </div>
+        <div style="background-color:black;" class="col text-white pt-3 pb-3">
+            <text class="font-weight-bold">Devam Filmleri</text>
+        </div>
+    </div>
+</div>
+<div id="myDIV" class="container">
+    <div class="row">
+        <div class="col-4 mt-2 mb-2" style="position:relative;">
+            <a href="~/Home/AvengersYorum"><img width="100%" height="350px" src="https://mediacms01.digiturkplay.com/sa_bc/PT0000032266/marvels-the-avengers_220x286.jpg" /></a>
+        </div>
+        <div class="col-4 mt-2 mb-2">
+            <a href="~/Home/Avengers2Yorum"><img width="100%" height="350px" src="https://www.lusakatimes.com/wp-content/uploads/2015/05/avengers.jpeg" /></a>
+        </div>
+        <div class="col-4 mt-2 mb-2">
+            <a href="~/Home/Avengers3Yorum">
+                <img width="100%" height="350px" src="https://emoji.com.tr/wp-content/uploads/2018/05/Avengers-Infinity-War-.jpg" />
+            </a>
+        </div>
+    </div>
+</div>
+<div class="">
+    <div class="row">
+        <div style="background-color:#121212;" class="col-lg-1 col-md-2 col-3 text-center pt-3 pb-3">
+            <i style="font-size:17px;" class="fa fa-info-circle pr-4 pl-4 text-white"></i>
+        </div>
+        <div style="background-color:black;" class="col text-white pt-3 pb-3">
+            <text class="font-weight-bold">Film Oyuncuları</text>
+        </div>
+    </div>
+</div>
+<div style="background-color: #e4e4e4;" class="container-fluid">
+    <div id="slide-left-container">
+        <div class="slide-left">
+        </div>
+    </div>
+    <div id="cards-container">
+        <div class="cards">
+            <div class="card" style="position:relative;overflow:hidden;">
+                <img src="https://i.redd.it/n50suom9suo41.jpg" height="88%" style="width:100%">
+                <p class="resimYazisi resimYazisiYönetmen"><text>Yönetmen</text></p>
+                <div class="container pt-2">
+                    <h5>
+                        <text style="margin-left:45px;" class="font-weight-bold">Chris Evans</text>
+                    </h5>
+                </div>
+            </div>
+            <div class="card" style="position:relative;overflow:hidden;">
+                <img src="https://tvguide1.cbsistatic.com/mediabin/showcards/celebs/s-u/thumbs/tom-hiddleston-325607_828x1104.png" height="88%" style="width:100%">
+                <p class="resimYazisi resimYazisiOyuncu"><text>Oyuncu</text></p>
+                <div class="container pt-2 ">
+                    <h5>
+                        <text style="margin-left:25px;" class="font-weight-bold">Tom Hiddleston</text>
+                    </h5>
+                </div>
+            </div>
+            <div class="card" style="position:relative;overflow:hidden;">
+                <img src="https://hairstyles.thehairstyler.com/hairstyle_views/front_view_images/12285/original/Chris-Hemsworth.jpg" height="88%" style="width:100%">
+                <p class="resimYazisi resimYazisiOyuncu"><text>Oyuncu</text></p>
+                <div class="container pt-2 ">
+                    <h5>
+                        <text style="margin-left:20px;" class="font-weight-bold">Chris Hemsworth</text>
+                    </h5>
+                </div>
+            </div>
+            <div class="card" style="position:relative;overflow:hidden;">
+                <img src="https://img-s2.onedio.com/id-54be6368a67b418a2024e879/rev-0/raw/s-05e32d4f601fbab9be23f5579ba16b49ee9f9cf6.jpg" height="88%" style="width:100%">
+                <p class="resimYazisi resimYazisiOyuncu"><text>Oyuncu</text></p>
+                <div class="container pt-2 ">
+                    <h5>
+                        <text style="margin-left:10px;" class="font-weight-bold">Scarlett Johansson</text>
+                    </h5>
+                </div>
+            </div>
+            <div class="card" style="position:relative;overflow:hidden;">
+                <img src="https://i.pinimg.com/originals/01/cd/19/01cd19e2f89371dab8c5403b76143964.jpg" height="88%" style="width:100%">
+                <p class="resimYazisi resimYazisiOyuncu"><text>Oyuncu</text></p>
+                <div class="container pt-2 ">
+                    <h5>
+                        <text style="margin-left:35px;" class="font-weight-bold">Mark Ruffalo</text>
+                    </h5>
+                </div>
+            </div>
+            <div class="card" style="position:relative;overflow:hidden;">
+                <img src="https://wantedmall.com/image/cache/data/Male%20Heads1/Robert%20Downey%20Jr%20New%20Face/03-599x599.jpg" height="88%" style="width:100%">
+                <p class="resimYazisi resimYazisiOyuncu"><text>Oyuncu</text></p>
+                <div class="container pt-2 ">
+                    <h5>
+                        <text style="margin-left:18px;" class="font-weight-bold">Robert Downey Jr</text>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="slide-right-container">
+        <div class="slide-right">
+        </div>
+    </div>
+</div>
+<div class="">
+    <div class="row">
+        <div style="background-color:#121212;" class="col-lg-1 col-md-2 col-3 text-center pt-3 pb-3">
+            <i style="font-size:17px;" class="fa fa-info-circle pr-4 pl-4 text-white"></i>
+        </div>
+        <div style="background-color:black;" class="col text-white pt-3 pb-3">
+            <text class="font-weight-bold">Yorumlar</text>
+        </div>
+    </div>
+</div>
+@{Html.RenderAction("Avengers4YorumListele", "Home");}
+<br />
+<div class="row justify-content-center"><a class="btn-success" style="border-radius:10px;text-decoration:none;" href="/Home/Avengers4YorumEkle"><text class="p-2">Yorum Yaz</text></a></div>
+<br />

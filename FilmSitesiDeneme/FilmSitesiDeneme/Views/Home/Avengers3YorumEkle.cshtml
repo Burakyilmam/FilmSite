@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Avengers3YorumEkle";
+    Layout = "~/Views/Shared.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div class="col bg-dark">
+        <div class="row pt-4">
+            <div class="col-6"><input type="text" style="width:100%;outline-color:white;border:none;" name="Yorum_AD" value="" /></div>
+            <div class="col-6"><input type="text" style="width:100%;outline-color:white;border:none;" name="Yorum_MAIL" value="" /></div>
+        </div>
+        <div class="col"><input type="date" id="datePicker" style="display:none;" name="Yorum_TARIH" value="" /></div>
+        <div class="row justify-content-center pt-4 pb-4">
+            <textarea name="Yorum_YORUM" style="width:98%;outline-color:white;border:none;resize:none; height:100px;"></textarea>
+        </div>
+        <div class="row pt-4 pb-4 justify-content-center"><button class="btn-primary">Yorum Yaz</button></div>
+    </div>
+</form>
+<script>
+    document.getElementById('datePicker').valueAsDate = new Date();
+</script>
+
+
+
+
+
+
+
+
+
