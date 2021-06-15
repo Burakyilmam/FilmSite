@@ -1,2 +1,2 @@
 # FilmSite
-RESPONSİVE KATEGORİSİZ FİLM İZLEME SİTESİ
+Responsive , MVC mimarisini kullanan , Kategorisiz film izleme sitesi
