@@ -1,2 +1,2 @@
 # FilmSite
-Responsive , MVC mimarisini kullanan , Kategorisiz film izleme sitesi
+ASP .NET kullanılan , Responsive , MVC mimarisini kullanan , Kategorisiz film izleme sitesi
